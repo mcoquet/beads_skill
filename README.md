@@ -1,6 +1,6 @@
 # BD Skill for Claude Code
 
-A Claude Code skill for issue tracking with [bd (beads)](https://github.com/bd-labs/bd), a lightweight issue tracker with first-class dependency support and git-based synchronization.
+A Claude Code skill for issue tracking with [bd (beads)](https://github.com/steveyegge/beads), a distributed, git-backed graph issue tracker designed specifically for AI coding agents.
 
 ## What is this?
 
@@ -8,18 +8,30 @@ This repository contains a Claude Code skill that enables Claude to work seamles
 
 ## What is bd?
 
-bd (beads) is a lightweight, developer-friendly issue tracker that:
-- Lives alongside your code in `.beads/` directories
-- Syncs with git for distributed collaboration
-- Supports dependencies and blocking relationships between issues
-- Provides a simple CLI for fast issue management
-- Integrates naturally with development workflows
+bd (beads), created by [Steve Yegge](https://github.com/steveyegge), is a distributed issue tracker designed for AI coding agents that:
+- Stores issues as JSONL files in `.beads/` directories alongside your code
+- Provides git-based version control for distributed collaboration
+- Supports dependency tracking with blocking relationships and hierarchical structures
+- Uses hash-based IDs (like `bd-a1b2`) to prevent conflicts in multi-agent workflows
+- Includes semantic summarization of completed tasks to preserve context
+- Optimized for agents with JSON output and automatic detection of ready-to-work tasks
 
 ## Installation
 
 ### Prerequisites
 
-1. Install bd: Follow the [bd installation guide](https://github.com/bd-labs/bd)
+1. **Install bd** using one of these methods:
+   ```bash
+   # npm
+   npm install -g @beads/bd
+
+   # Homebrew
+   brew install steveyegge/beads/bd
+
+   # Go
+   go install github.com/steveyegge/beads/cmd/bd@latest
+   ```
+
 2. Have Claude Code installed and configured
 
 ### Installing the Skill
@@ -106,5 +118,5 @@ This skill is provided as-is for use with Claude Code and bd.
 
 ## Related Projects
 
-- [bd (beads)](https://github.com/bd-labs/bd) - The issue tracker this skill integrates with
+- [bd (beads)](https://github.com/steveyegge/beads) - The issue tracker this skill integrates with
 - [Claude Code](https://github.com/anthropics/claude-code) - Anthropic's official CLI for Claude
